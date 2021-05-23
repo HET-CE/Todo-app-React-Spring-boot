@@ -12,21 +12,29 @@ export default class ViewEmployee extends Component {
             this.setState({todo: res.data});
         })
     }
+
     backToHome = () => {
         this.props.history.push('/');
     }
+    updateHandler = () => {
+        this.props.history.push(`/add-todo/${this.state.id}`);
+    }
+    deleteHandler = () => {
+        Todoservice.deleteTodo(this.state.id).then((res) => {
+            this.props.history.push("/");
+        })
+    }
+
+
 
     render() {
         return (
             <div>
-                <div className="card col-md-6 offset-md-3">
+                <div className="card col-md-6 offset-md-3" style={{ marginTop: "20px"}}>
                     <h3 className = "text-center">View Task Details</h3>
                     <hr />
                     <div className="card-body">
                     <div className="row">
-                        <label>TODO ID:</label>
-                        <h3>{this.state.todo.id}</h3>
-                        <hr />
                         <label>Task: </label>
                         <h3>{this.state.todo.task}</h3>
                         <hr />
@@ -41,6 +49,8 @@ export default class ViewEmployee extends Component {
                     </div>
                     </div>
                     <button className="btn btn-warning" onClick = {this.backToHome}>Back To Home Page</button>
+                    <button className="btn btn-info" style={{marginTop: "5px"}} onClick={this.updateHandler}>Update</button>
+                    <button className="btn btn-danger" style={{marginTop: "5px"}}  onClick = {this.deleteHandler}>Delete</button>
                 </div>
             </div>
         )
