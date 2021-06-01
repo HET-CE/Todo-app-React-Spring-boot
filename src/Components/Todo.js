@@ -25,7 +25,7 @@ export default class Todo extends Component {
         return (
             <div>
                 <h1 className = "text-center"> Your Todo List:</h1>
-                <button className = "btn btn-warning m-2" onClick = {this.add}>Add Task</button>
+                <button className = "btn btn-danger m-2" onClick = {this.add}>Add Task</button>
                 <table className = "table table-striped table-hover m-2" style={{width: "99vw"}}>
                     <thead className = "thead-dark">
                         <tr style={{color: "#00D84A"}}>
