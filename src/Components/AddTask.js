@@ -43,7 +43,7 @@ class AddTask extends Component {
     saveTodo = (e) => {
         e.preventDefault();
         let todoAdd = { task: this.state.task, lastModified: this.state.lastModified, createdAt: this.state.createdAt, endDate: this.state.endDate};
-        let todoUpdate = {task: this.state.task, lastModified: this.state.lastModified, endDate: this.state.endDate};
+        let todoUpdate = {task: this.state.task, lastModified: new Date().getFullYear() + "-" + ((new Date().getMonth()+1) < 10 ? "0" + (new Date().getMonth()+1) : (new Date().getMonth()+1)) + "-" + ((new Date().getDate()) < 10 ? "0" + (new Date().getDate()): (new Date().getDate())),  createdAt: this.state.createdAt, endDate: this.state.endDate};
 
         if(this.state.id == -1){
             TodoService.addTodo(todoAdd).then(res => {

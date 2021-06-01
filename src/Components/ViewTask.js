@@ -30,7 +30,7 @@ export default class ViewEmployee extends Component {
     render() {
         return (
             <div>
-                <div className="card col-md-6 offset-md-3" style={{ marginTop: "20px"}}>
+                <div className="card col-md-6 offset-md-3" style={{paddingTop:"20px", background: "transparent"}}>
                     <h3 className = "text-center">View Task Details</h3>
                     <hr />
                     <div className="card-body">

@@ -26,9 +26,9 @@ export default class Todo extends Component {
             <div>
                 <h1 className = "text-center"> Your Todo List:</h1>
                 <button className = "btn btn-warning m-2" onClick = {this.add}>Add Task</button>
-                <table className = "table table-striped table-hover m-2" >
+                <table className = "table table-striped table-hover m-2" style={{width: "99vw"}}>
                     <thead className = "thead-dark">
-                        <tr>
+                        <tr style={{color: "#00D84A"}}>
                             <td>Task</td>
                             <td>Last Modified</td>
                             <td>Created At:</td>
@@ -39,7 +39,7 @@ export default class Todo extends Component {
                     <tbody>
                         {
                             this.state.users.map((user) => {
-                                return(<tr key = {user.id}  style={{cursor: "pointer"}} onClick = {() => this.viewHandler(user.id)}>
+                                return(<tr key = {user.id}  style={{cursor: "pointer", color: "#2827CC"}} onClick = {() => this.viewHandler(user.id)}>
                                     <td>{user.task}</td>
                                     <td>{user.lastModified}</td>
                                     <td>{user.createdAt}</td>
