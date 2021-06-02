@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Todoservice from '../Service/Todoservice'
 
-// Ignore this Modified symbol front of this file changes pushed already on github.
 export default class Todo extends Component {
     state= {
         	users:[]
