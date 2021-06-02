@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Todoservice from '../Service/Todoservice'
 
+// Ignore this Modified symbol front of this file changes pushed already on github.
 export default class Todo extends Component {
     state= {
         	users:[]
@@ -28,7 +29,7 @@ export default class Todo extends Component {
                 <button className = "btn btn-danger m-2" onClick = {this.add}>Add Task</button>
                 <table className = "table table-striped table-hover m-2" style={{width: "99vw"}}>
                     <thead className = "thead-dark">
-                        <tr style={{color: "#00D84A"}}>
+                        <tr style={{color: "#ffffff"}}>
                             <td>Task</td>
                             <td>Last Modified</td>
                             <td>Created At:</td>
@@ -39,7 +40,7 @@ export default class Todo extends Component {
                     <tbody>
                         {
                             this.state.users.map((user) => {
-                                return(<tr key = {user.id}  style={{cursor: "pointer", color: "#2827CC"}} onClick = {() => this.viewHandler(user.id)}>
+                                return(<tr key = {user.id}  style={{cursor: "pointer", color: "#ffffff"}} onClick = {() => this.viewHandler(user.id)}>
                                     <td>{user.task}</td>
                                     <td>{user.lastModified}</td>
                                     <td>{user.createdAt}</td>
